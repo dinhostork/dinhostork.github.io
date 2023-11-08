@@ -78,6 +78,22 @@ img {
   position: relative;
 }
 
+.red-web{
+  color: #FF4C60;
+}
+
+.yellow-android {
+  color: #FFD15C;
+}
+
+.blue-softEng {
+  color: #6C6CE5;
+}
+
+.green-arq {
+  color: #40CE2C;
+}
+
 /*=================================================================*/
 /*                      TYPOGRAPHY                              
 /*=================================================================*/
@@ -941,6 +957,7 @@ section.home.light .social-icons li a:hover {
 .skill-item .skill-info h4 {
   font-size: 16px;
   font-weight: 500;
+  width: 100%;
 }
 .skill-item .skill-info span {
   font-size: 14px;
@@ -1345,6 +1362,10 @@ select.portfolio-filter-mobile {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.subtext-title {
+  margin-left: 14px;
 }
 
 #infscr-loading {

@@ -15,7 +15,7 @@ $(window).on('load', function() {
     }
 
     // initialize working mode
-    toastr.warning('Ainda estou trabalhando nas informações mostradas nesta página.')
+    //toastr.warning('Ainda estou trabalhando nas informações mostradas nesta página.')
 
     /*=========================================================================
      Wow Initialize
