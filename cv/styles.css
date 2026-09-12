@@ -1,0 +1,371 @@
+/*
+ * Currículo print-ready.
+ *
+ * Claro e de alto contraste: o PDF precisa funcionar impresso, em escala de
+ * cinza, no celular e num parser de ATS. O azul da identidade entra apenas
+ * como acento, nunca como portador de informação.
+ */
+
+:root {
+  --ink: #10161d;        /* texto principal  — 15.8:1 sobre branco */
+  --ink-soft: #3d4a58;   /* texto secundário —  9.0:1 */
+  --ink-mute: #5b6875;   /* metadados        —  6.2:1 */
+  --accent: #0b5cd5;     /* azul de acento   —  7.0:1 */
+  --rule: #d8dee6;
+  --rule-soft: #eaeef3;
+}
+
+@page {
+  size: A4;
+  margin: 13mm 14mm;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  font-size: 9.6pt;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------- *
+ * Cabeçalho
+ * ---------------------------------------------------------------- */
+.name {
+  font-size: 23pt;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.alias {
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+.headline {
+  margin-top: 2px;
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.contact {
+  margin-top: 7px;
+  font-size: 8.7pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.contact .sep {
+  color: var(--rule);
+  padding: 0 5px;
+}
+
+.contact .ci {
+  white-space: nowrap;
+}
+
+.header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 9px;
+  margin-bottom: 13px;
+}
+
+/* ---------------------------------------------------------------- *
+ * Seções
+ * ---------------------------------------------------------------- */
+section {
+  margin-top: 13px;
+}
+
+h2 {
+  break-after: avoid-page;
+  page-break-after: avoid;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+
+.summary {
+  color: var(--ink-soft);
+  text-align: justify;
+}
+
+.summary p + p {
+  margin-top: 6px;
+}
+
+/* ---------------------------------------------------------------- *
+ * Competências
+ * ---------------------------------------------------------------- */
+.expertise {
+  columns: 2;
+  column-gap: 22px;
+  list-style: none;
+}
+
+.expertise li {
+  font-size: 9.3pt;
+  padding-left: 11px;
+  position: relative;
+  break-inside: avoid;
+  line-height: 1.55;
+}
+
+.expertise li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.52em;
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+}
+
+/* ---------------------------------------------------------------- *
+ * Experiência
+ * ---------------------------------------------------------------- */
+.role {
+  /* Nunca deixar o título de uma experiência sozinho no fim da página. */
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}
+
+.role + .role {
+  margin-top: 11px;
+}
+
+.role-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  break-after: avoid-page;
+  page-break-after: avoid;
+}
+
+.role-title {
+  font-size: 10.4pt;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.role-period {
+  font-size: 8.5pt;
+  color: var(--ink-mute);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.role-org {
+  font-size: 9.4pt;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 1px;
+}
+
+.role-org .where {
+  font-weight: 400;
+  color: var(--ink-mute);
+}
+
+ul.bullets {
+  list-style: none;
+  margin-top: 5px;
+}
+
+ul.bullets li {
+  position: relative;
+  padding-left: 12px;
+  margin-top: 3px;
+  color: var(--ink-soft);
+  break-inside: avoid;
+}
+
+ul.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 0.58em;
+  width: 5px;
+  height: 1.4px;
+  background: var(--ink-mute);
+}
+
+.role-stack {
+  margin-top: 5px;
+  font-size: 8.5pt;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+
+.role-stack b {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.earlier {
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-top: 9px;
+}
+
+.earlier b {
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------------------- *
+ * Cases de engenharia
+ * ---------------------------------------------------------------- */
+.case {
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+  border-left: 2px solid var(--accent);
+  padding-left: 11px;
+}
+
+.case + .case {
+  margin-top: 11px;
+}
+
+.case-name {
+  font-size: 10.4pt;
+  font-weight: 700;
+}
+
+.case-discipline {
+  font-size: 8.3pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 1px;
+}
+
+.case-body {
+  margin-top: 5px;
+  color: var(--ink-soft);
+  text-align: justify;
+}
+
+.case-note {
+  margin-top: 5px;
+  font-size: 8.8pt;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------------------- *
+ * Tecnologias, formação, listas finais
+ * ---------------------------------------------------------------- */
+.tech div {
+  margin-top: 4px;
+  break-inside: avoid;
+  line-height: 1.55;
+}
+
+.tech b {
+  display: inline-block;
+  min-width: 118px;
+  font-weight: 700;
+  font-size: 8.8pt;
+}
+
+.tech span {
+  color: var(--ink-soft);
+  font-size: 9.1pt;
+}
+
+.edu {
+  break-inside: avoid;
+}
+
+.edu + .edu {
+  margin-top: 6px;
+}
+
+.edu-title {
+  font-weight: 700;
+  font-size: 9.8pt;
+}
+
+.edu-org {
+  color: var(--ink-soft);
+  font-size: 9.1pt;
+}
+
+ul.plain {
+  list-style: none;
+}
+
+ul.plain li {
+  position: relative;
+  padding-left: 12px;
+  margin-top: 3px;
+  color: var(--ink-soft);
+  break-inside: avoid;
+}
+
+ul.plain li::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 0.58em;
+  width: 5px;
+  height: 1.4px;
+  background: var(--ink-mute);
+}
+
+ul.plain li b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.two-col,
+.three-col {
+  margin-top: 13px;
+  display: grid;
+  gap: 6px 20px;
+}
+
+.two-col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.three-col {
+  grid-template-columns: 1.15fr 0.85fr 1fr;
+}
+
+.two-col > section,
+.three-col > section {
+  margin-top: 0;
+  break-inside: avoid;
+}
+
+.footer-note {
+  margin-top: 14px;
+  padding-top: 7px;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 8pt;
+  color: var(--ink-mute);
+}

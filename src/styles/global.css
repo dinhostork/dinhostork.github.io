@@ -1,0 +1,220 @@
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+@import 'tailwindcss';
+
+/* =========================================================================
+   Design tokens — design-system/dinho-stork/MASTER.md §3–§7
+   ========================================================================= */
+@theme {
+  --color-bg: #07090c;
+  --color-surface: #0d1117;
+  --color-surface-2: #12181b;
+  --color-line: #1c242b;
+  --color-line-strong: #2a343d;
+
+  --color-text: #e8edf2;
+  --color-muted: #94a3b0;
+  --color-dim: #7d8896;
+
+  --color-signal: #34d399;
+  --color-signal-dim: rgb(52 211 153 / 0.12);
+  --color-award: #f5a524;
+  --color-on-signal: #07090c;
+
+  --font-display: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
+
+  --radius-chip: 4px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --breakpoint-xs: 23.4375rem; /* 375px */
+}
+
+:root {
+  --dur-fast: 150ms;
+  --dur-base: 280ms;
+  --dur-slow: 600ms;
+  --shadow-md: 0 8px 24px -8px rgb(0 0 0 / 0.65);
+  --shadow-lg: 0 24px 60px -20px rgb(0 0 0 / 0.8);
+  --nav-h: 4.5rem;
+  color-scheme: dark;
+}
+
+/* =========================================================================
+   Base
+   ========================================================================= */
+@layer base {
+  * {
+    min-width: 0; /* impede que filhos de flex/grid forcem overflow horizontal */
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Nav flutuante não pode obscurecer o alvo de um link âncora (WCAG 2.2). */
+  :target,
+  section[id] {
+    scroll-margin-top: calc(var(--nav-h) + 1.5rem);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-on-signal);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* URLs, ids e conteúdo longo reflui em vez de estourar o container. */
+  a, li, dd, dt {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* =========================================================================
+   Utilitários de composição
+   ========================================================================= */
+@utility container-page {
+  width: 100%;
+  max-width: 80rem; /* 1280px */
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-dim);
+}
+
+@utility hairline {
+  border: 1px solid var(--color-line);
+}
+
+@utility glass {
+  background: rgb(13 17 23 / 0.72);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid var(--color-line);
+}
+
+@utility measure {
+  max-width: 68ch;
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grid técnico de fundo — MASTER.md §5 */
+@utility tech-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* =========================================================================
+   Órbita do retrato — anéis concêntricos girando em torno do centro.
+   Apenas transform e opacity; o reset de reduced-motion abaixo as congela.
+   ========================================================================= */
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.orbit {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.orbit-cw {
+  animation: orbit-spin 64s linear infinite;
+}
+
+.orbit-ccw {
+  animation: orbit-spin 46s linear infinite reverse;
+}
+
+.orbit-nodes {
+  animation: orbit-spin 34s linear infinite;
+}
+
+.orbit-pulse {
+  animation: orbit-pulse 3.4s ease-in-out infinite;
+}
+
+/* =========================================================================
+   Reduced motion — MASTER.md §7 (obrigatório)
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-parallax],
+  [data-tilt] {
+    transform: none !important;
+  }
+}
