@@ -175,7 +175,7 @@ export const skillGroups: SkillGroup[] = [
     id: 'frameworks',
     title: 'Frameworks / Plataformas',
     caption: 'Onde a aplicação roda',
-    primary: ['Node.js', 'Next.js / React', 'Jest', 'Android Studio', 'Jenkins'],
+    primary: ['Node.js', 'Next.js / React', 'Laravel', 'Jest', 'Android Studio', 'Jenkins'],
     secondary: ['NestJS', 'Spring', 'Django', 'Linux'],
   },
   {
