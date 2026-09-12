@@ -126,30 +126,31 @@ export function roleFor(entry: TimelineEntry): string {
  * ------------------------------------------------------------------ */
 
 export const summaryShort =
-  'Engenheiro de software com foco em arquitetura de sistemas e backend distribuído. Trabalho com ' +
-  'plataformas SaaS multi-tenant, processamento assíncrono por filas, cache distribuído e ' +
-  'comunicação em tempo real, em containers sobre Kubernetes. Também atuo com dados: pipelines ' +
-  'geoespaciais sobre imagens de satélite, busca indexada e séries temporais. Uso modelos de ' +
-  'linguagem em fluxos específicos do produto, sempre com revisão humana antes da entrega. Formado ' +
-  'em Engenharia de Computação pela UFRB, com quatro prêmios Inventor UFRB.'
+  'Engenheiro de software com atuação em arquitetura de software, backend e ' +
+  'desenvolvimento de plataformas digitais. Tenho experiência com sistemas distribuídos, cloud, ' +
+  'engenharia de dados e inteligência artificial aplicada a produtos. Ao longo da minha trajetória, ' +
+  'trabalhei em soluções para educação, agricultura de precisão e cidades inteligentes, combinando ' +
+  'engenharia de software com problemas reais de diferentes domínios.'
 
 export const summaryLong = [
-  'Engenheiro de software com foco em arquitetura de sistemas, backend distribuído e plataformas de ' +
-    'dados. Meu trabalho mais recente é em SaaS multi-tenant: modelagem do isolamento por cliente, ' +
-    'APIs REST com controle de acesso por perfil e as tarefas de maior custo computacional rodando ' +
-    'fora do caminho de requisição. A aplicação roda em containers sobre Kubernetes, com CI/CD e ' +
-    'deploy sem downtime.',
-  'Escala costuma ser consequência de como o sistema foi dividido, então gasto tempo definindo ' +
-    'fronteiras de domínio e instrumentando a aplicação para medir gargalo em vez de supor. Em ' +
-    'segurança, o padrão é autenticação e autorização por perfil, RBAC, MFA, trilha de auditoria e ' +
-    'os fluxos que a LGPD exige.',
-  'Do lado de dados, construí pipelines que consomem imagens do Sentinel-2, calculam índices de ' +
-    'vegetação e mantêm séries temporais por talhão. É o que sustenta a detecção de anomalia em ' +
-    'lavoura. Onde uso modelo de linguagem, ele trabalha sobre resultado já calculado e passa por ' +
-    'revisão humana antes de chegar ao usuário. O número vem do dado, não do modelo.',
-  'Sou Engenheiro de Computação pela UFRB e antes disso fiz técnico em eletrotécnica. Recebi três ' +
-    'prêmios Inventor UFRB pelo Smart Vagas, cujos módulos estão registrados como software com a ' +
-    'universidade como titular, e um quarto pelo NUPI.',
+  'Engenheiro de software com  experiência em ' +
+    'arquitetura de software, backend e desenvolvimento de plataformas digitais. Atuo na construção ' +
+    'e evolução de sistemas distribuídos, aplicações SaaS, integrações e serviços orientados a dados, ' +
+    'participando tanto das decisões de arquitetura quanto da implementação das soluções.',
+
+  'Minha experiência recente envolve sistemas multi-tenant, processamento assíncrono, comunicação ' +
+    'em tempo real, infraestrutura em cloud e práticas de segurança, observabilidade e automação de ' +
+    'deploy. Também trabalho com engenharia de dados e processamento geoespacial, incluindo pipelines ' +
+    'para análise de imagens de satélite e séries temporais aplicadas à agricultura de precisão.',
+
+  'Tenho atuado ainda na aplicação de inteligência artificial em produtos de software, principalmente ' +
+    'em fluxos que utilizam modelos de linguagem para apoiar análise, geração de conteúdo e interpretação ' +
+    'de dados. Procuro integrar esses recursos de forma controlada, mantendo regras de negócio, dados ' +
+    'estruturados e validação humana como parte do processo.',
+
+  'Ao longo da minha trajetória, trabalhei em projetos de diferentes domínios, incluindo as áreas de educação, cidades inteligentes, ' +
+    'agricultura de precisão e sistemas voltados ao setor público. Além de prêmios em competições de tecnologia, recebi três prêmios Inventor UFRB pelo ' +
+    'Smart Vagas e um quarto reconhecimento pelo NUPI.',
 ]
 
 /* ------------------------------------------------------------------ *
