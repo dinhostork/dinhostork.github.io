@@ -67,12 +67,12 @@ async function main() {
 
   const docs: Doc[] = [
     {
-      slug: 'anderson-oliveira-software-engineer-cv-short',
+      slug: 'anderson-oliveira-software-engineer-short',
       title: 'Anderson Oliveira — Software Engineer — CV Short',
       html: renderShort(css),
     },
     {
-      slug: 'anderson-oliveira-software-engineer-cv-long',
+      slug: 'anderson-oliveira-software-engineer-long',
       title: 'Anderson Oliveira — Software Engineer — CV Long',
       html: renderLong(css),
     },

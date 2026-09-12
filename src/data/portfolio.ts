@@ -97,8 +97,8 @@ export const profile: Profile = {
   'Nesta página reuni minha trajetória, formação e alguns dos projetos em que trabalhei. Se quiser conversar, meus contatos estão no fim da página.',
 ],
   email: 'me@dinhostork.com',
-  resumeShort: '/assets/anderson-oliveira-software-engineer-cv-short.pdf',
-  resumeLong: '/assets/anderson-oliveira-software-engineer-cv-long.pdf',
+  resumeShort: '/assets/anderson-oliveira-software-engineer-short.pdf',
+  resumeLong: '/assets/anderson-oliveira-software-engineer-long.pdf',
   photo: '/images/perfil.jpg',
   photoAlt: 'Retrato de Dinho Stork (Anderson Oliveira)',
 }

@@ -79,8 +79,8 @@ Duas versões em PDF, geradas a partir do mesmo conteúdo do portfólio:
 
 | Versão | Páginas | Para quê |
 |---|---|---|
-| `anderson-oliveira-software-engineer-cv-short.pdf` | 1 | Triagem, ATS, candidatura rápida |
-| `anderson-oliveira-software-engineer-cv-long.pdf` | 4 | Avaliação técnica aprofundada |
+| `anderson-oliveira-software-engineer-short.pdf` | 1 | Triagem, ATS, candidatura rápida |
+| `anderson-oliveira-software-engineer-long.pdf` | 4 | Avaliação técnica aprofundada |
 
 ```bash
 npm run cv        # gera os dois PDFs em public/assets/

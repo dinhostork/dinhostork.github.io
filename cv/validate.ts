@@ -23,13 +23,13 @@ interface Expectation {
 
 const EXPECTATIONS: Expectation[] = [
   {
-    file: 'anderson-oliveira-software-engineer-cv-short.pdf',
+    file: 'anderson-oliveira-software-engineer-short.pdf',
     label: 'CV Short',
     maxPages: 1,
     mustContain: ['Anderson Oliveira', 'Conecta AEE', 'GeoSpectra', 'Smart Vagas', 'Inventor UFRB'],
   },
   {
-    file: 'anderson-oliveira-software-engineer-cv-long.pdf',
+    file: 'anderson-oliveira-software-engineer-long.pdf',
     label: 'CV Long',
     maxPages: 4,
     mustContain: [
