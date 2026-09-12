@@ -9,12 +9,12 @@ interface ResumeLinksProps {
 const VERSIONS = [
   {
     href: profile.resumeShort,
-    label: 'CV resumido',
+    label: 'Currículo resumido',
     hint: '1 página, para triagem',
   },
   {
     href: profile.resumeLong,
-    label: 'CV completo',
+    label: 'Currículo completo',
     hint: '4 páginas, com arquitetura e projetos',
   },
 ] as const
