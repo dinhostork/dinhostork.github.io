@@ -86,13 +86,16 @@ export const profile: Profile = {
   legalName: 'Anderson Oliveira',
   role: 'Engenheiro de Software',
   tagline:
-    'Trabalho com arquitetura de sistemas, backend distribuído e plataformas que processam dados geoespaciais e usam modelos de linguagem.',
+    'Engenheiro de software com foco em arquitetura, backend e sistemas distribuídos, com experiência em cloud, dados e inteligência artificial aplicada a produtos.',
   intro: [
-    'Sou engenheiro de software. Trabalho principalmente com backend, sistemas distribuídos e aplicações em tempo real, e com a integração de modelos de IA a esses sistemas.',
-    'Escrevo principalmente em Python e TypeScript, e já trabalhei com Go e PHP. Na prática isso envolve bancos relacionais e não relacionais, mensageria, pipelines de CI/CD e monitoramento de performance.',
-    'Passei por projetos de cidades inteligentes, aplicações multimodais e sistemas com IA, atuando no backend e na definição da arquitetura.',
-    'Aqui estão minha trajetória, formação e os projetos em que trabalhei. Se quiser conversar, o contato está no fim da página.',
-  ],
+  'Sou engenheiro de software e atuo principalmente com backend, arquitetura e sistemas distribuídos, desenvolvendo e evoluindo produtos digitais em diferentes domínios.',
+
+  'Trabalho atualmente com Python, TypeScript, JavaScript e PHP, além de já ter utilizado Go e Java em outros projetos. Minha experiência inclui bancos relacionais e não relacionais, mensageria, CI/CD, observabilidade, cloud e processamento assíncrono.',
+
+  'Ao longo da minha trajetória, participei de projetos nas áreas de educação, cidades inteligentes, agricultura de precisão e inteligência artificial aplicada a produtos, atuando tanto na implementação quanto em decisões de arquitetura.',
+
+  'Nesta página reuni minha trajetória, formação e alguns dos projetos em que trabalhei. Se quiser conversar, meus contatos estão no fim da página.',
+],
   email: 'me@dinhostork.com',
   resumeShort: '/assets/anderson-oliveira-software-engineer-cv-short.pdf',
   resumeLong: '/assets/anderson-oliveira-software-engineer-cv-long.pdf',
@@ -402,9 +405,9 @@ export const projects: Project[] = [
     summary:
       'Sistema de eventos da Pró-Reitoria de Pesquisa, Pós-Graduação, Criação e Inovação da UFRB, em produção.',
     body: [
-      'Neste projeto desenvolvo as regras de negócio para o funcionamento do sistema de eventos da Pró-Reitoria de Pesquisa, Pós-Graduação, Criação e Inovação da Universidade Federal do Recôncavo da Bahia.',
+      'Neste projeto desenvolvi as regras de negócio para o funcionamento do sistema de eventos da Pró-Reitoria de Pesquisa, Pós-Graduação, Criação e Inovação da Universidade Federal do Recôncavo da Bahia.',
     ],
-    stack: ['Node.js', 'Redis', 'MongoDB', 'AWS', 'Angular', 'Sistema de filas'],
+    stack: ['Node.js', 'Redis', 'MongoDB', 'Angular', 'Sistema de filas'],
     cover: '/images/projects/ppgci-eventos-cover.webp',
     coverAlt: 'Interface do sistema PPGCI Eventos',
     links: [{ label: 'Ver em produção', href: 'https://ppgcieventos.ufrb.edu.br/' }],

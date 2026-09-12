@@ -7,9 +7,7 @@ export function Footer() {
         <p className="text-dim font-mono text-xs">
           © {new Date().getFullYear()} {profile.name} · {profile.legalName}
         </p>
-        <p className="text-dim font-mono text-xs">
-          Construído com React, Three.js e Vite
-        </p>
+       
       </div>
     </footer>
   )

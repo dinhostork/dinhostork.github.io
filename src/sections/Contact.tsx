@@ -43,8 +43,7 @@ export function Contact() {
 
         <Reveal delay={0.1}>
           <p className="text-muted measure mt-7 text-[clamp(1.05rem,2vw,1.25rem)] leading-relaxed">
-            Estou aberto a colaborações e a novas oportunidades. Você não gosta de
-            formulários, então me manda um e-mail.
+            Estou aberto a novas oportunidades e colaborações. Se quiser conversar, é só me mandar um e-mail.
           </p>
         </Reveal>
 

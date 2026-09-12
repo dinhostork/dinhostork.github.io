@@ -37,8 +37,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-signal inline-block size-1.5 rounded-full" aria-hidden="true" />
-            Aberto a novas oportunidades
+            
           </motion.p>
 
           <h1
